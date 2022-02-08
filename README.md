@@ -1,4 +1,4 @@
-# Plantilla de proyecto CGI
+# Plantilla de proyecto CGIS
 
 Esta es una descripción por defecto de **ProyectoPrueba**. Aquí deberá aparecer la descripción que también aparezca en el documento
 
