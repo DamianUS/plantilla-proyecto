@@ -11,7 +11,7 @@ Esta es una descripción por defecto de **ProyectoPrueba**. Aquí deberá aparec
    -v $(pwd):/var/www/html \
    -w /var/www/html \
    laravelsail/php81-composer:latest \
-   composer install --ignore-platform-reqs`
+   composer install --ignore-platform-reqs`. Más info: https://laravel.com/docs/master/sail#installing-composer-dependencies-for-existing-projects.
 4. Ahora que tenemos disponible la carpeta de vendor, levante Laravel Sail desde Window Terminal (el terminal de la máquina Host, no la asociada con el contenedor Docker de Sail) `./vendor/bin/sail up -d`
 5. Asocie un terminal a la imagen de Docker que está corriendo el servidor web:![](https://i.ibb.co/m46S95z/Ejemplo-VSCode-Docker.png "VSCode Docker")
 6. Abre en el navegador `http://localhost`
