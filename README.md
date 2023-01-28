@@ -12,11 +12,12 @@ Esta es una descripción por defecto de **ProyectoPrueba**. Aquí deberá aparec
    -w /var/www/html \
    laravelsail/php81-composer:latest \
    composer install --ignore-platform-reqs`. Más info: https://laravel.com/docs/master/sail#installing-composer-dependencies-for-existing-projects.
-4. Ahora que tenemos disponible la carpeta de vendor, levante Laravel Sail desde Window Terminal (el terminal de la máquina Host, no la asociada con el contenedor Docker de Sail) `./vendor/bin/sail up -d`
-5. Asocie un terminal a la imagen de Docker que está corriendo el servidor web:![](https://i.ibb.co/m46S95z/Ejemplo-VSCode-Docker.png "VSCode Docker")
-6. Abre en el navegador `http://localhost`
+4. Ahora que tenemos disponible la carpeta de vendor, levante Laravel Sail desde Window Terminal (el terminal de la máquina Host Linux) `./vendor/bin/sail up -d` o `sail up -d` si ha realizado el alias de bash.
+5. Abra en el navegador `http://localhost`
 
-**IMPORTANTE** Tendrá dos terminales: 1 ataca a la máquina física y otro al contenedor. Los comandos como `php artisan xxx`, `composer xxx`, siempre serán ejecutados sobre el contenedor, ya que necesitan el entorno de desarrollo con MySQL, PHP, etc. (contenedor), mientras que la gestión del contenedor, como `./vendor/bin/sail up -d` o `./vendor/bin/sail down`, desde la máquina física.
+Recuerde que los comandos como `php artisan xxx` que vea en la documentación, deberán realizarse con `./vendor/bin/sail artisan comandoAEjecutar` o `sail artisan comandoAEjecutar` si ha activado el alias en bash, ya necesitan el entorno de desarrollo con MySQL, PHP, etc., que se encuentra en el contenedor de Sail. Si no, siempre podrá asociar un terminal directamente desde VSCode al contenedor de Sail para otras operaciones que deban ejecutarse en el servidor web que corre dentro del contenedor.
+
+Cuando termine de trabajar, ejecute `./vendor/bin/sail down` o `sail down` si ha activado el alias en bash para parar la ejecución del contenedor. Recuerde que para volver a encenderlo necesitará ejecutar `./vendor/bin/sail up -d` o `sail up -d ` si ha activado el alias en bash desde el terminal de la máquina Host (Linux).
 
 ## Herramienta para escribir lenguaje de marcado
 https://www.markdownguide.org/basic-syntax/ describe cómo se utiliza el markdown.
